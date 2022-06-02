@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// primeiro parametro é a barra da rota e a segunda é a função
+Route::get('/hello-world', function () {
+    return 'Olá Mundo!!';
+   /*  return view('welcome'); */
+});
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'deu certo';
+   /*  return view('welcome'); */
 });
