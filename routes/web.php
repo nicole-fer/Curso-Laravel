@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\UseController;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+/* Criando Controller e Linkando com as rotas */
 
-Route::get('user/{user}', function(\App\Models\User $user){
-    return $user;
+Route::get('user/{users}', [UseController::class, 'show']);
+
+
+Route::get('/request', function(Request $request){
+    $r = $request->header();
+    dd($r);
+    return 'x';
 });
 
 
