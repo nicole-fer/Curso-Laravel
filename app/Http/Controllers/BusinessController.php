@@ -8,14 +8,42 @@ use Illuminate\Http\Request;
 class BusinessController extends Controller
 {
     public function index()
-    {
-        $businesses = Business::create([
+
+
+     { 
+        //Terceira forma
+        $input = [
+            'name' => 'Maria',
+            'email' => 'maria@maria.com',
+        ];
+        $businesses = Business::find(2);
+        $businesses->fill($input);
+        $businesses->save();
+        dd($businesses);
+        
+        /*
+        //Atualizando forma II, retorna true se tiver dado certo
+         $businesses=Business::find(2)->update([
+            'name' => 'Jon',
+            'email' => 'jon@jon.com',
+        ]); 
+        dd($businesses); */
+        
+        
+        //populando o banco 
+/*         $businesses = Business::create([
             'name' => 'Jon Snow',
             'email' => 'jon@snow.com',
             'adress' => 'Rua a quadra B'
-        ]);
+        ]); */
 
-        dd($businesses);
+   /*   Atualizando o registro forma I  
+        $businesses = Business::find(2);
+        $businesses->name = 'Tiago';
+        $businesses->email = 'Tiago@laravel9.com';
+        $businesses->adress = 'Quadra C Rua B';
+        $businesses->save(); 
+        dd($businesses); */
 
         //$businesses = Business::all();
        // $businesses = Business::find(1);
