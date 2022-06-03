@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\UseController;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 /* Criando Controller e Linkando com as rotas */
 
+Route::get('businesses',[BusinessController::class, 'index']);
 Route::get('user/{users}', [UseController::class, 'show']);
 
 
